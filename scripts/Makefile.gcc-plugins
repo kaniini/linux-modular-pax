@@ -30,6 +30,8 @@ ifdef CONFIG_GCC_PLUGINS
   export PLUGINCC GCC_PLUGINS_CFLAGS GCC_PLUGIN GCC_PLUGIN_SUBDIR
   export SANCOV_PLUGIN DISABLE_LATENT_ENTROPY_PLUGIN
 
+  gcc-plugin-y                                         += colorize_plugin.so
+
   ifneq ($(PLUGINCC),)
     # SANCOV_PLUGIN can be only in CFLAGS_KCOV because avoid duplication.
     GCC_PLUGINS_CFLAGS := $(filter-out $(SANCOV_PLUGIN), $(GCC_PLUGINS_CFLAGS))
